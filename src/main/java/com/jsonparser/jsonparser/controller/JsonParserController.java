@@ -1,10 +1,7 @@
 package com.jsonparser.jsonparser.controller;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.json.JSONArray;
@@ -20,8 +17,8 @@ import com.jsonparser.jsonparser.model.Pair;
 public class JsonParserController {
 
 	List<Pair> jsonForTable = new ArrayList<>();
-	List<List<Pair> > completeList = new ArrayList<>();
-	
+	List<List<Pair>> completeList = new ArrayList<>();
+
 	@PostMapping(value = "/test")
 	public void saveData(@RequestBody String jsonStr) {
 		jsonForTable.clear();
@@ -34,21 +31,21 @@ public class JsonParserController {
 		}
 		System.out.println("JSON: " + jsonObject);
 
-//		Iterator<?> keys = jsonObject.keys();
-//		System.out.println("JSON Keys: " + keys);
-//		Set<String> keySet = new HashSet<>();
-		
+		// Iterator<?> keys = jsonObject.keys();
+		// System.out.println("JSON Keys: " + keys);
+		// Set<String> keySet = new HashSet<>();
+
 		handleJSONObject(jsonObject, "");
 
-//		while (keys.hasNext())
-//			System.out.println((String) keys.next());
-		
+		// while (keys.hasNext())
+		// System.out.println((String) keys.next());
+
 		System.out.println("jsonForTable: ");
-		for(int i = 0; i<jsonForTable.size(); i++){
+		for (int i = 0; i < jsonForTable.size(); i++) {
 			System.out.println(jsonForTable.get(i).getX() + " " + jsonForTable.get(i).getY());
 		}
-//		List<Map<String, String> > mp = new ArrayList<>();
-//		getAllKeysForTable(jsonObject, mp);
+		// List<Map<String, String> > mp = new ArrayList<>();
+		// getAllKeysForTable(jsonObject, mp);
 	}
 
 	private void handleJSONArray(JSONArray jsonArray, String lastStr) {
@@ -82,13 +79,12 @@ public class JsonParserController {
 			Object value;
 			try {
 				value = jsonObject.get((String) key);
-				if(lastStr == null || lastStr.isEmpty()){
+				if (lastStr == null || lastStr.isEmpty()) {
 					System.out.println("Key: " + key);
 					handleValue(value, key.toString());
-				} else{
+				} else {
 					System.out.println("Key: " + lastStr + "_" + key);
 					handleValue(value, lastStr + "_" + key.toString());
-					System.out.println("I am here!");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -97,7 +93,7 @@ public class JsonParserController {
 	}
 
 	private void getAllKeysForTable(JSONObject jsonObject, Set<String> keySet) {
-//		handleJSONObject(jsonObject);
+		// handleJSONObject(jsonObject);
 	}
 
 }
