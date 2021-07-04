@@ -1,0 +1,27 @@
+{
+	"squadName": "Super hero squad",
+	"homeTown": "Metro City",
+	"formed": "2016",
+	"secretBase": "Super tower",
+	"active": "true",
+	"members": [
+		{
+			"index": "0",
+			"isActive": "false",
+			"age": "21",
+			"eyeColor": "blue",
+			"name": "Bentley Clayton",
+			"gender": "male",
+			"registered": "2018-05-02T05:35:41 +04:00"
+		},
+		{
+			"index": "1",
+			"isActive": "false",
+			"age": "23",
+			"eyeColor": "blue",
+			"name": "Lela Ramos",
+			"gender": "female",
+			"registered": "2014-02-24T03:13:50 +05:00"
+		}
+	]
+}
